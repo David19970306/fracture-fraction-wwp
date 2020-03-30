@@ -9,6 +9,7 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{natbib}
+\usepackage{cite}
 
 \usepackage[hyphens]{url}
 \usepackage[hidelinks]{hyperref}
@@ -56,14 +57,20 @@ Deliverable I. \par
 
 \makeTitleParagraph % This command includes the title page
 
-\paragraph{Abstract.} Artificial intelligence (AI) is developing remarkable progress in clinical diagnosis and even amount of researchers have devoted to this filed for making more contributions. however, more advanced models and methods still should be improved by using deep learning, such as detecting bone fracture automatically or determine the possibility of cancer for the patients by using deep learning methods. In this paper, we proposed a novel and high effective method to implement the fracture detection for the various human bones. This method can annotate the images obtained from MURA dataset automatically and detect whether the bone fracture happens or not by using the improved model based on Faster R-CNN and other models. Meanwhile, this method results will compare with the judgement of the radiologists and orthopedists.
+\paragraph{Abstract.} Artificial intelligence (AI) is developing remarkable progress in clinical diagnosis and even amount of researchers have devoted to this filed for making more contributions. however, more advanced models and methods still should be improved by using deep learning, such as detecting bone fracture automatically or determine the possibility of cancer for the patients by using deep learning methods. In this paper, we proposed a novel and high effective method to implement the fracture detection for the various human bones. This method can annotate the images obtained from MURA dataset automatically, detect whether the bone fracture happens or not and even localize the specific place of fracture by using the improved model based on Faster R-CNN and other models. Meanwhile, this method results will compare with the judgement of the radiologists and orthopedists.
 %\end{abstract}
 
 \section{Introduction}
-The clinical diagnosis is used for detecting all kinds of
+The clinical diagnosis of X-ray images is used for detecting all kinds of symptoms of disease, such as chest cancer, hand fracture, leg fracture and so on.  Although lots of professional doctors in England can diagnose these diseases directly, the manual diagnosis still has low effective and costs long turnaround times to get the results.  Hence, the AI technology as an assistant tool in this area is very important and necessary, which may enhance processing and communicating probabilistic tasks in medicine. Deep learning is the most popular way to meet this requirement, many experts have studied this aspect for few years. In order to increase the speed and accuracy of diagnosis in bone fracture, the U-net network (Lindsey et. al. 2018) has been proposed to solve this problem, and it can be used to help clinicians to make a preliminary diagnosis. Another example is that a method for detecting femur fracture based on SK-DenseNet is investigated by Yu. et. al. (2019), which compared with VGG16 and googleNet and get the better accuracy. In addition to improve the algorithms in clinical area, datasets are also needed to make and test in this field. Rajpurkar et. al. (2018) shows that the DenseNet network with 169-layer can detect upper limb fracture well on MURA dataset, which could comparable to the human judgements on finger and wrist fractures. However, there are still existing some disadvantages during these methods. Due to amount of trained and annotated images are inevitable, while the current data capacity is small and the efficiency of manual annotation is low, so automatic annotation is quite important for us to get the big volume dataset at high speed. In this paper, auto label based on Faster R-CNN is proposed and could reduce marking time by a wide margin. Another issue is the basic and key factor in every related paper, which is the accuracy of localization. most of papers only refer to whether the fracture exists or not, but it is not enough for the patients or doctors to get their results. Consequently, the more detailed information such as localization of fracture is needed and detected. According to this issue, this paper trains a model based on transfer learning to implement the general positioning of fracture.
+
+The remainder of this paper is organized as follows. In Section 2, aims and objectives are described what we should do. In Section 3, main methodology will be mentioned below, including technical approaches, software platform, challenges during experiments. At last, the project plan will be displayed by Gantt chart in Section 4.
 
 \section{Aims and Objectives}
+In this project, the final aim is to implement a system for improving the efficiency of doctor’s diagnosis, meanwhile, this system can also be able to get a initial understanding of the injury when the patient is hurt. In order to reach this goal, two subtasks should be achieved firstly. They are the automatic annotation and localization of fracture respectively.
 \section{Main and Methodology}
+technical approaches, theories, etcHardware/software platform required
+Risks and challenges
+
 \section{Project Plan}
 \section{Reference}
 \subsection{This is a subsection}
@@ -130,7 +137,12 @@ Sometimes you want to use a citation as subject of your sentence. For example, \
 
 
 
-\bibliographystyle{apalike}
-\bibliography{MyBibliography}
+\bibliographystyle{plain}
+\bibliography{DavidBibliography.bib}
+
+Lindsey  R,  Daluiski  A,  Chopra  S,  et al  (2018).  Deep  neural  network  improves fracture  detection  by  clinicians.  Proceedings  of  the  National  Academy  of Sciences, 115(45), 11591-11596.  
+
+Pranav Rajpurkar, Jeremy Irvin, Aarti Bagul, et al (2018). MURA: Large Dataset for Abnormality Detection in Musculoskeletal Radiographs. The Conference on Medical Imaging with Deep Learning 2018, arXiv:1712.06957v4. 
+
 
 \end{document}
