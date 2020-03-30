@@ -66,79 +66,36 @@ The clinical diagnosis of X-ray images is used for detecting all kinds of sympto
 The remainder of this paper is organized as follows. In Section 2, aims and objectives are described what we should do. In Section 3, main methodology will be mentioned below, including technical approaches, software platform, challenges during experiments. At last, the project plan will be displayed by Gantt chart in Section 4.
 
 \section{Aims and Objectives}
-In this project, the final aim is to implement a system for improving the efficiency of doctor’s diagnosis, meanwhile, this system can also be able to get a initial understanding of the injury when the patient is hurt. In order to reach this goal, two subtasks should be achieved firstly. They are the automatic annotation and localization of fracture respectively.
+In this project, the final aim is to implement a system for improving the efficiency of doctor’s diagnosis, meanwhile, this system can also be able to get a initial understanding of the injury when the patient is hurt. In order to reach this goal, two subtasks should be achieved firstly. They are the automatic annotation and localization of fracture respectively. Both of them are the effective improved measures in medical AI field.
 \section{Main and Methodology}
-technical approaches, theories, etcHardware/software platform required
-Risks and challenges
+In this paper, main and methodology can be divided into three parts below.
+\subsection{Technical approaches}
+For technical approaches, the improved methods are developed based on the current approaches. there are mainly two parts to implement them. On the one hand, after reading and comparing different references, the Faster R-CNN is the best network to annotate automatically the images from MURA dataset, which has better
+detection accuracy and higher detection efficiency. Based on this model, firstly, small volume of training data will be labelled manually, and then do the augmentation and other pre-processing operations, finally, putting data into the faster R-CNN model with transfer learning will be done.
+
+On the other hand, because the various models have different accuracy and efficiency and most of them have low universality, so further work will be done by combining multiple good models. After some initial experiments, some models with great performance have been picked up from current models, which are Resnet50, inceptions-v3 and DenseNet169. As for the follow-up improvement plan, more experiments are inevitable. 
+
+\subsection{Hardware/Software platform}
+For the platform, the Google Colab with GPU and TensorFlow will be used and the Python language is the main programming language. 
+\subsection{Risks and challenges}
+
 
 \section{Project Plan}
-\section{Reference}
-\subsection{This is a subsection}
-
-\subsection{Tables and Figures}
-
-Figure \ref{fig.niceFigure} is an example of a figure.
+From Figure 1, the detailed plan of project is displayed below. The primary task is mainly divided into four parts. Firstly, it is reading reference, which is a necessary step before starting this project. Meanwhile, it includes two subtasks in the chart. Secondly, finding the current methods is essential for me to improve the accuracy. Ans then summarizing the problems obtained from other algorithms and proposing a novel method will be done. Lastly, remaining time will be used to write and revise the report and codes.
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.6\columnwidth]{f2_expSetup}
-\caption{Here goes the caption of the figure.}
-\label{fig.niceFigure}
+\includegraphics[width=1\columnwidth]{images/TaskGantt.png}
+\caption{Project Plan.}
 \end{center}
 \end{figure}
 
-Here we show some numbers in Table \ref{tab.someTable}
-
-
-\begin{table}
-\begin{center}
-\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-\hline
-\multicolumn{4}{|c|}{Country List} \\
-\hline
-Country Name     or Area Name& ISO ALPHA 2 Code &ISO ALPHA 3 Code&ISO numeric Code\\
-\hline
-Afghanistan   & AF    &AFG&   004\\
-Aland Islands&   AX  & ALA   &248\\
-Albania &AL & ALB&  008\\
-Algeria    &DZ & DZA&  012\\
-American Samoa&   AS  & ASM&016\\
-Andorra& AD  & AND   &020\\
-Angola& AO  & AGO&024\\
-\hline
-\end{tabular}
-\label{tab.someTable}
-\caption{Here is the caption of the table}\vspace{8pt}
-\end{center}
-\end{table}
-
-\subsection{Equations}
-
-Equation \ref{eq.PDI} is an example of a nice equation.
-\begin{equation}
-\frac{\partial O}{\partial I_{i}} = \sum_{j}{\frac{\partial O}{\partial h_{j}}\frac{\partial h_{j}}{\partial S_{j}^{1}}\frac{\partial S_{j}^{1}}{\partial I_{i}}}\quad.
-\label{eq.PDI}
-\end{equation}
-As equation \ref{eq.PD2ndO} shows, there is no limit to your fantasy when it comes to writing equations.
-\begin{eqnarray}
-\nonumber\frac{\partial^{2} O}{\partial I_{i}^{2}} =
-\sum_{j}w_{ij}^{0}\Bigg [ (1 - 2h_{i})h_{j}(1 - h_{j})w_{ij}^{0}\frac{\partial O}{\partial h_{j}} +\\
-+ h_{j}(1 - h_{j})\Bigg(\frac{\partial^{2} O}{\partial I_{i} \partial h_{j}}\Bigg)
-\Bigg ]\label{eq.PD2ndO}
-\end{eqnarray}
-
-\subsection{Citing}
-
-Insert references in the bibtex file using the bibtex format. Latex makes sure that references are displayed correctly. Make sure you use journal papers, books and conferences papers predominantly. These are authoritative, peer-reviewed sources. Webpages can be occasionally cited, but are considered as less authoritative.
-the ski
-
-Typically, when you make a statement that is substantiated by information in a source document, you are require to cite the source \citep{bullinaria2009}. Sometimes more sources substantiate your statement \citep{soltoggioSteilNeuralComputation2013,soltoggioHTP2014}. 
-
-Sometimes you want to use a citation as subject of your sentence. For example, \citet{SuttonBarto1998} introduce basic concepts in reinforcement learning.
 
 
 
+
+\section{Reference}
 \bibliographystyle{plain}
-\bibliography{DavidBibliography.bib}
+\bibliography{MyBibliography.bib}
 
 Lindsey  R,  Daluiski  A,  Chopra  S,  et al  (2018).  Deep  neural  network  improves fracture  detection  by  clinicians.  Proceedings  of  the  National  Academy  of Sciences, 115(45), 11591-11596.  
 
