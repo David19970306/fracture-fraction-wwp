@@ -56,7 +56,7 @@ Deliverable I. \par
 
 \makeTitleParagraph % This command includes the title page
 
-\paragraph{Abstract.} Artificial intelligence (AI) is developing remarkable progress in clinical diagnosis. However, even if the amounts of researchers have devoted to this filed for making more contributions, more advanced models and methods still should be improved by using deep learning, such as detecting bone fracture automatically or determine the possibility of cancer for the patients by using deep learning methods. In this paper, we proposed a novel and high effective method to implement the fracture detection for the various human bones. This method can annotate the images obtained from MURA dataset automatically, detect whether the bone fracture happens or not and even localize the specific place of fracture by using the improved model based on Faster R-CNN and other networks. Meanwhile, the judgement of the radiologists and orthopedists will be taken account into the experiments for assuring the results are credible.
+\paragraph{Abstract.} Artificial intelligence (AI) is developing remarkable progress in clinical diagnosis. However, even if the amounts of researchers have devoted to this filed for making more contributions, more advanced models and methods still should be improved by using deep learning, such as detecting bone fracture automatically or determine the possibility of cancer for the patients by using deep learning methods. In this paper, we proposed a novel and high effective method to implement the fracture detection for the various human bones based on transfer learning. This method can annotate the images obtained from MURA dataset automatically, detect whether the bone fracture happens or not and even localize the specific place of fracture by using the improved model based on Faster R-CNN and other networks. Meanwhile, the judgement of the radiologists and orthopedists will be taken account into the experiments for assuring the results are credible.
 %\end{abstract}
 
 \section{Introduction}
@@ -69,10 +69,18 @@ In this project, the final aim is to implement a system for improving the effici
 \section{Main and Methodology}
 In this paper, main and methodology can be divided into three parts below.
 \subsection{Technical approaches}
-For technical approaches, the improved methods are developed based on the current approaches. there are mainly two parts to implement them. On the one hand, after reading and comparing different references, the Faster R-CNN is the best network to annotate automatically the images from MURA dataset, which has better
-detection accuracy and higher detection efficiency. Based on this model, firstly, small volume of training data will be labelled manually, and then do the augmentation and other pre-processing operations, finally, putting data into the faster R-CNN model with transfer learning will be done.
+\begin{figure}
+\begin{center}
+\includegraphics[width=1\columnwidth]{images/architecture.png}
+\caption{Main schematic diagram}
+\end{center}
+\end{figure}
 
-On the other hand, because the various models have different accuracy and efficiency and most of them have low universality, so further work will be done by combining multiple good models. After some initial experiments, some models with great performance have been picked up from current models, which are Resnet50, inceptions-v3 and DenseNet169. As for the follow-up improvement plan, more experiments are inevitable. 
+For technical approaches, the improved methods are developed based on the current approaches. there are mainly two parts to implement them, which are showed in Figure 1.
+
+On the one hand, the main process can be found in Figure 1. After reading and comparing different references, the Faster R-CNN is the best network to annotate automatically the images from MURA dataset, which has better detection accuracy and higher detection efficiency. Based on this model, firstly, small volume of training data will be labelled manually, and then do the augmentation and other pre-processing operations, finally, putting data into the faster R-CNN model with transfer learning will be done.
+
+On the other hand, because the various models have different accuracy and efficiency and most of them have low universality, so further work will be done by combining multiple good models. After some initial experiments, some models with great performance have been picked up from current models, which are ResNet50, Inceptions-v3 and DenseNet169. The more detailed processes based on ResNet50 are displayed in Figure As for the follow-up improvement plan, more experiments are inevitable. 
 
 Due to the limitation of datasets, all experiments conducted on MURA dataset which is made by Stanford university. In this dataset, there are seven parts of human bones, including elbow, hand, finger, forearm, humerus, shoulder and wrist. All of them have several patients’ fracture information obtained from real hospitals. 
 
@@ -83,7 +91,7 @@ For the platform, the Google Colab with GPU and TensorFlow will be used and the 
 However, there are still existing amounts of challenges in this project. For example, the architecture of model is difficult to modify and adapt to the high accuracy in fracture detection, so it needs to be tested repeatedly and find the best result in this project. On the other hand, in order to increase the universality of model, more training images should be collected manually, such as getting them from local hospital.
 
 \section{Project Plan}
-From Figure 1, the detailed plan of project is displayed below. The primary task is mainly divided into four parts. Firstly, it is reading reference, which is a necessary step before starting this project. Meanwhile, it includes two subtasks in the chart. Secondly, finding the current methods is essential for me to improve the accuracy. Ans then summarizing the problems obtained from other algorithms and proposing a novel method will be done. Lastly, remaining time will be used to write and revise the report and codes.
+From Figure 2, the detailed plan of project is displayed below. The primary task is mainly divided into four parts. Firstly, it is reading reference, which is a necessary step before starting this project. Meanwhile, it includes two subtasks in the chart. Secondly, finding the current methods is essential for me to improve the accuracy. Ans then summarizing the problems obtained from other algorithms and proposing a novel method will be done. Lastly, remaining time will be used to write and revise the report and codes.
 \begin{figure}
 \begin{center}
 \includegraphics[width=1\columnwidth]{images/TaskGantt.png}
