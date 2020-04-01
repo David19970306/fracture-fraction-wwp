@@ -6,7 +6,7 @@
 \contentsline {section}{\numberline {2}Aims and Objectives}{3}{section.2}% 
 \contentsline {section}{\numberline {3}Materials and Methodology}{4}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}Datasets}{4}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Main Method}{4}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.2}Methods}{4}{subsection.3.2}% 
 \contentsline {subsection}{\numberline {3.3}Hardware/Software platform}{6}{subsection.3.3}% 
 \contentsline {subsection}{\numberline {3.4}Risks and challenges}{6}{subsection.3.4}% 
 \contentsline {section}{\numberline {4}Project Plan}{7}{section.4}% 

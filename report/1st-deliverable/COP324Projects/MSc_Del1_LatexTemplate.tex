@@ -82,19 +82,24 @@ The X-ray is the primary diagnostic way to evaluate the patients with fracture, 
 The clinical diagnosis of X-ray images is used for detecting all kinds of symptoms of disease, such as chest cancer, hand fracture, leg fracture and so on.  Although lots of professional doctors in England can diagnose these diseases directly, the manual diagnosis still has low effective and costs long turnaround times to get the results.  Hence, the AI technology as an assistant tool in this area is very important and necessary, which may enhance processing and communicating probabilistic tasks in medicine. Deep learning is the most popular way to meet this requirement, many experts have studied this aspect for few years. In order to increase the speed and accuracy of diagnosis in bone fracture, the U-net network (Lindsey et. al. 2018) has been proposed to solve this problem, and it can be used to help clinicians to make a preliminary diagnosis \cite{b1}. Another example is that a method for detecting femur fracture based on SK-DenseNet is investigated by Yu. et. al. (2019), which compared with VGG16 and googleNet and get the better accuracy \cite{b2}. In addition to improve the algorithms in clinical area, datasets are also needed to make and test in this field. Rajpurkar et. al. (2018) shows that the DenseNet network with 169-layer can detect upper limb fracture well on MURA dataset, which could comparable to the human judgements on finger and wrist fractures \cite{b3}. However, there are still existing some disadvantages among these methods. Due to the amounts of training images with annotation are inevitable, while the current data capacity is small and the efficiency of manual annotation is low, so automatic annotation is quite important for us to get the big volume dataset at high speed. In this paper, auto label based on Faster R-CNN \cite{b4} is proposed and could reduce marking time by a wide margin. Another issue is the accuracy of fracture detection, which is the basic and key factor in related papers. Most of papers only refer to whether the fracture exists or not, but it is not enough for the patients or doctors to get their results. Consequently, the more detailed information such as localization of fracture is needed and detected. According to this issue, this paper trains a model based on transfer learning to implement the general positioning of fracture.
 
 \subsection{Organization of paper}
-The remainder of this paper is organized as follows. In Section 2, aims and objectives are described what we should do. In Section 3, main methodology will be mentioned below, including technical approaches, software platform, challenges during experiments. At last, the project plan will be displayed by Gantt chart in Section 4.
+The remainder of this paper is organized as follows. In Section 2, aims and objectives are described. In Section 3, main methodology will be mentioned below, including technical approaches, software platform, challenges during experiments. At last, the project plan will be displayed by Gantt chart in Section 4.
 
 \clearpage
 \section{Aims and Objectives}
-In this project, the final aim is to implement a system for improving the efficiency of doctor’s diagnosis. This system not only reduces the doctor’s workloads, but decreases the waiting time for diagnosis. In order to achieve this goal, two subtasks should be done firstly. Both of them are the automatic annotation and localization of fracture respectively. Both of them are the effective improved measures in medical AI field.
-
+In this project, the final aim is to implement a system for improving the efficiency of doctor’s diagnosis. This system not only reduces the doctor’s workloads, but decreases the waiting time for diagnosis. In order to achieve this goal, two subtasks should be done firstly. They are the automatic annotation and localization of fracture respectively. Both of them are the effective improved measures in medical AI field. The general goals and steps are shown in Figure 1, the annotations of images can be found and the expected accuracy and localization are displayed in Figure1.
+\begin{figure}
+\begin{center}
+\includegraphics[width=1\columnwidth]{images/TestingRes.png}
+\caption{The General Steps.}
+\end{center}
+\end{figure}
 
 \clearpage
 \section{Materials and Methodology}
 \subsection{Datasets}
 Considering that the datasets used for fracture detection are different and the data diversity, MURA dataset created from Stanford university is chosen. In this dataset, there are seven parts of human bones, including elbow, hand, finger, forearm, humerus, shoulder and wrist. The researchers assembled this dataset of radiographs consisting of 14863 studies from 12173 patients with multi-view images \cite{b3}. Although MURA dataset have provided a lot of patients data, we still collect extra patient images from local patients. Meanwhile, the small volume of data can also increase a certain confidence level through training and validating them.
 
-\subsection{Main Method}
+\subsection{Methods}
 
 \begin{figure}
 \begin{center}
@@ -103,8 +108,10 @@ Considering that the datasets used for fracture detection are different and the 
 \end{center}
 \end{figure}
 
-The methods are improved based on the current approaches. There are two main parts showed in Figure 1.
-\par On the one hand, the main process can be found in Figure 1. After reading and comparing different references, the Faster R-CNN is the best network to annotate automatically the images from MURA dataset, which has better detection accuracy and higher detection efficiency. Based on this model, firstly, small volume of training data will be labelled manually (showed in Figure 2-3), and then do the augmentation and other pre-processing operations, finally, putting data into the faster R-CNN model with transfer learning will be done. 
+The methods are improved based on the current approaches. There are two main parts shown in Figure 2. 
+
+On the one hand, the main process can be found in Figure 2. After reading and comparing different references, the Faster R-CNN is the best network to annotate automatically the images from MURA dataset, which has better detection accuracy and higher detection efficiency. Based on this model, firstly, small volume of training data will be labelled manually (shown in Figure 3-4), and then do the augmentation and other pre-processing operations, finally, putting data into the faster R-CNN model with transfer learning will be done. 
+
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
 \begin{minipage}[t]{0.5\textwidth}%并排放两张图片，每张占页面的0.5，下同。
 \centering
@@ -130,7 +137,7 @@ However, there still exist amounts of challenges in this project. For example, t
 
 \clearpage
 \section{Project Plan}
-From Figure 4, the detailed plan of project is displayed below. The primary task is mainly divided into some parts. Firstly, it is literature review, which is a necessary step before starting this project. Meanwhile, it includes two subtasks in the chart. Secondly, analyzing the existing methods and proposing some potential measures are very essential. And then the models will be trained by using the collected datasets. Lastly, remaining time will be used to write and revise the report and codes.
+From Figure 5, the detailed plan of project is displayed below. The primary task is mainly divided into some parts. Firstly, it is literature review, which is a necessary step before starting this project. Meanwhile, it includes two subtasks in the chart. Secondly, analyzing the existing methods and proposing some potential measures are very essential. And then the models will be trained by using the collected datasets. Lastly, remaining time will be used to write and revise the report and codes.
 
 \begin{figure}
 \begin{center}
